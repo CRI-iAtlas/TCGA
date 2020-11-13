@@ -18,7 +18,9 @@ create_gene_expression_file <- function(){
     dplyr::rename_with(~stringr::str_sub(.x, 1, 12)) %>%
     dplyr::select(dplyr::any_of(c("hgnc", "entrez", tcga_samples))) %>%
     tidyr::pivot_longer(
-      -"entrez", names_to = "sample", values_to = "rna_seq_expr"
+      cols      = -c("hgnc", "entrez"), 
+      names_to  = "sample", 
+      values_to = "rna_seq_expr"
     )
 
   synapse_store_feather_file(
