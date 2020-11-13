@@ -5,21 +5,19 @@
       {
         "Name": "CRAN",
         "URL": "https://cloud.r-project.org"
+      },
+      {
+        "Name": "Synapse",
+        "URL": "http://ran.synapse.org"
       }
     ]
   },
   "Packages": {
-    "BH": {
-      "Package": "BH",
-      "Version": "1.72.0-3",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "8f9ce74c6417d61f0782cbae5fd2b7b0"
-    },
     "PythonEmbedInR": {
       "Package": "PythonEmbedInR",
       "Version": "0.4.65",
-      "Source": "unknown",
+      "Source": "Repository",
+      "Repository": null,
       "Hash": "e8c861e8e62267011701d3257917221e"
     },
     "R6": {
@@ -29,12 +27,12 @@
       "Repository": "CRAN",
       "Hash": "b203113193e70978a696b2809525649d"
     },
-    "Rcpp": {
-      "Package": "Rcpp",
-      "Version": "1.0.5",
+    "arrow": {
+      "Package": "arrow",
+      "Version": "2.0.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "125dc7a0ed375eb68c0ce533b48d291f"
+      "Hash": "04a9e87326777f5205bacdf3ec4ffa02"
     },
     "assertthat": {
       "Package": "assertthat",
@@ -43,19 +41,26 @@
       "Repository": "CRAN",
       "Hash": "50c838a310445e954bc13f26f26a6ecf"
     },
+    "bit": {
+      "Package": "bit",
+      "Version": "4.0.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f36715f14d94678eea9933af927bc15d"
+    },
+    "bit64": {
+      "Package": "bit64",
+      "Version": "4.0.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "9fe98599ca456d6552421db0d6772d8f"
+    },
     "cli": {
       "Package": "cli",
       "Version": "2.1.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "0b316487b21d21f99ebf98abe179b1ea"
-    },
-    "clipr": {
-      "Package": "clipr",
-      "Version": "0.7.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "ebaa97ac99cc2daf04e77eecc7b781d7"
     },
     "cpp11": {
       "Package": "cpp11",
@@ -71,12 +76,12 @@
       "Repository": "CRAN",
       "Hash": "0d57bc8e27b7ba9e45dba825ebc0de6b"
     },
-    "data.table": {
-      "Package": "data.table",
-      "Version": "1.13.2",
+    "curl": {
+      "Package": "curl",
+      "Version": "4.3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "907b184e0fd13bc19154a8f322920015"
+      "Hash": "2b7d10581cc730804e9ed178c8374bd6"
     },
     "digest": {
       "Package": "digest",
@@ -113,13 +118,6 @@
       "Repository": "CRAN",
       "Hash": "7fce217eaaf8016e72065e85c73027b5"
     },
-    "feather": {
-      "Package": "feather",
-      "Version": "0.3.5",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "76de23891bdba419517e855ed611ad29"
-    },
     "generics": {
       "Package": "generics",
       "Version": "0.1.0",
@@ -133,13 +131,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "6efd734b14c6471cfe443345f3e35e29"
-    },
-    "hms": {
-      "Package": "hms",
-      "Version": "0.5.3",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "726671f634529d470545f9fd1a9d1869"
     },
     "lifecycle": {
       "Package": "lifecycle",
@@ -183,13 +174,6 @@
       "Repository": "CRAN",
       "Hash": "97def703420c8ab10d8f0e6c72101e02"
     },
-    "readr": {
-      "Package": "readr",
-      "Version": "1.4.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "2639976851f71f330264a9c9c3d43a61"
-    },
     "renv": {
       "Package": "renv",
       "Version": "0.12.2",
@@ -228,7 +212,8 @@
     "synapser": {
       "Package": "synapser",
       "Version": "0.7.64",
-      "Source": "unknown",
+      "Source": "Repository",
+      "Repository": null,
       "Hash": "14184ce30e919400dffde92e499db042"
     },
     "tibble": {
