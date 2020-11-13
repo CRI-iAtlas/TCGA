@@ -14,9 +14,9 @@ create_gene_expression_file <- function(){
     synapse_delimited_id_to_tbl(.) %>%
     tidyr::separate("gene_id", sep = "\\|", into = c("hgnc", "entrez")) %>%
     dplyr::mutate("entrez" = as.integer(.data$entrez)) %>%
-    dplyr::select(dplyr::any_of(c("entrez", tcga_aliquots))) %>%
+    dplyr::select(dplyr::any_of(c("hgnc", "entrez", tcga_aliquots))) %>%
     dplyr::rename_with(~stringr::str_sub(.x, 1, 12)) %>%
-    dplyr::select(dplyr::any_of(c("entrez", tcga_samples))) %>%
+    dplyr::select(dplyr::any_of(c("hgnc", "entrez", tcga_samples))) %>%
     tidyr::pivot_longer(
       -"entrez", names_to = "sample", values_to = "rna_seq_expr"
     )
