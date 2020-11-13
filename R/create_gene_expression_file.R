@@ -7,7 +7,7 @@ create_gene_expression_file <- function(){
     dplyr::pull("aliqout")
   
   tcga_samples <- "syn22139885" %>%
-    iatlas.data::synapse_feather_id_to_tbl(.) %>%
+    synapse_feather_id_to_tbl(.) %>%
     dplyr::pull("name")
   
   expression_tbl <- "syn22890627" %>%
@@ -19,8 +19,9 @@ create_gene_expression_file <- function(){
     dplyr::select(dplyr::any_of(c("entrez", tcga_samples))) %>%
     tidyr::pivot_longer(
       -"entrez", names_to = "sample", values_to = "rna_seq_expr"
-    ) 
-  iatlas.data::synapse_store_feather_file(
+    )
+
+  synapse_store_feather_file(
     expression_tbl,
     "expression.feather",
     "syn22889307"
