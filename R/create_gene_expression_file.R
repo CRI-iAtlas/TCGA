@@ -21,7 +21,8 @@ create_gene_expression_file <- function(){
       cols      = -c("hgnc", "entrez"), 
       names_to  = "sample", 
       values_to = "rna_seq_expr"
-    )
+    ) %>% 
+    dplyr::filter(!is.na(.data$rna_seq_expr))
 
   synapse_store_feather_file(
     expression_tbl,

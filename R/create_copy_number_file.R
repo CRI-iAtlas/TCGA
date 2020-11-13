@@ -14,13 +14,13 @@ create_copy_number_file <- function(){
     dplyr::rename_with(~stringr::str_sub(.x, 1, 12)) %>%
     dplyr::rename("hgnc" = "Gene Symbol") %>%
     dplyr::left_join(tcga_hgnc_to_entrez, by = "hgnc") %>%
-    dplyr::select(dplyr::any_of(c("entrez", tcga_samples)))
+    dplyr::select(dplyr::any_of(c("hgnc", "entrez", tcga_samples))) %>% 
     tidyr::pivot_longer(
       cols = -c("hgnc", "entrez"), 
       names_to = "sample", 
       values_to = "copy_number"
     ) %>%
-    tidyr::drop_na()
+    dplyr::filter(!is.na(.data$copy_number))
   
   synapse_store_feather_file(
     copy_number_tbl,
