@@ -18,3 +18,11 @@ synapse_store_feather_file <- function(df, file_name, parent_id){
   synapse_store_file(file_name, parent_id)
   file.remove(file_name)
 }
+
+synapse_delimited_id_to_tbl <- function(id, delim = "\t") {
+  synapser::synLogin()
+  id %>%
+    synapser::synGet() %>%
+    purrr::pluck("path") %>%
+    readr::read_delim(., delim = delim)
+}
