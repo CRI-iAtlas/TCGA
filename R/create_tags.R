@@ -118,10 +118,16 @@ create_tags <- function(){
     ) %>% 
     dplyr::select("name", "old_name", "short_display", "long_display", "color", "characteristics")
   
+  parent_groups <- dplyr::tibble(
+    "tag" = c("Immune_Subtype", "TCGA_Subtype", "TCGA_Study"),
+    "related_tag" = "parent_group"
+  )
+  
   tag_relationships <- dplyr::bind_rows(
     immune_subtype_relationships, 
     tcga_study_relationships, 
-    tcga_subtype_relationships
+    tcga_subtype_relationships,
+    parent_groups
   )
   
   synapse_store_feather_file(
